@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marketing.jangumacrine.africa/sitemap.xml
