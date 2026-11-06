@@ -1,3 +1,4 @@
+import AutomationDemo from "./components/AutomationDemo";
 import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
@@ -92,7 +93,9 @@ useEffect(() => {
         toggleTheme={toggleTheme}
       />
 
-{isEcommerceCaseStudy ? (
+{currentHash === "#/case-studies/outbound-automation" ? (
+  <AutomationDemo />
+) : isEcommerceCaseStudy ? (
   <CaseStudyPage />
 ) : isSEOCaseStudy ? (
   <SEOCaseStudyPage />

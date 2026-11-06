@@ -131,6 +131,8 @@ export default function MarketingOpsCaseStudyPage() {
           </div>
         </header>
 
+        <p><a className="case-study-read-link" href="#/case-studies/outbound-automation">Try the interactive reply-to-CRM demo ↗</a></p>
+
         {/* DELIVERABLES */}
 
         <section className="case-study-results">

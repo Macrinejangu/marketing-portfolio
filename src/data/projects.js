@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: 7, number: "LIVE DEMO", title: "From Reply to Sales Follow-up",
+    category: "INTERACTIVE / OUTBOUND AUTOMATION",
+    description: "Choose a reply scenario and follow sample data through an n8n workflow connecting Instantly with Close CRM.",
+    result: "7 steps", resultLabel: "Explore the reply-to-CRM path",
+    tags: ["n8n", "Instantly", "Close CRM", "JavaScript"],
+    challenge: "Connect outbound responses with CRM records and sales follow-up.",
+    approach: "Webhook capture, field mapping, CRM lookup, create-or-update logic, reply notes and conditional sales notifications.",
+    outcome: "An interactive simulation of workflow logic using fictional data. No production performance metrics are claimed.",
+    note: "Select a scenario to see which branch runs and why."
+  },
+  {
   id: 1,
   number: "01",
   title: "The $240K E-commerce Campaign",

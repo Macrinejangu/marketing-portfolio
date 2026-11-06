@@ -9,6 +9,7 @@ export default function ProjectCard({ project }) {
   3: "#/case-studies/seo-growth",
   4: "#/case-studies/marketing-operations",
   5: "#/case-studies/website-growth",
+  7: "#/case-studies/outbound-automation",
 };
 
 const caseStudyUrl = caseStudyRoutes[project.id];

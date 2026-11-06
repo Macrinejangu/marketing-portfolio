@@ -1,0 +1,326 @@
+/* =================================================================at
+   1. Page Setup & Global Layout
+   ================================================================ */
+.automation-page {
+  padding-bottom: 60px;
+}
+
+.demo-context {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.demo-context h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 10px 0 16px;
+}
+
+.demo-context p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =================================================================at
+   2. Demo Lab & Headings
+   ================================================================ */
+.demo-lab {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 30px;
+  margin: 40px 0 70px;
+}
+
+.demo-lab-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.demo-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.demo-lab h2 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 10px 0 16px;
+}
+
+.demo-lab p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+
+/* =================================================================at
+   3. Tags & Simulations
+   ================================================================ */
+.demo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.demo-tags span,
+.demo-simulation {
+  border: 1px solid var(--border);
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+}
+
+.demo-simulation {
+  white-space: nowrap;
+  color: var(--text);
+}
+
+
+/* =================================================================at
+   4. Scenarios & Controls
+   ================================================================ */
+.demo-scenarios {
+  border: 0;
+  padding: 0;
+  margin: 28px 0 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.demo-scenarios legend {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.demo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.demo-controls > span {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.demo-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+
+/* =================================================================at
+   5. Buttons & Interactive States
+   ================================================================ */
+.demo-lab button {
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 15px;
+  line-height: 1.4;
+}
+
+.demo-lab button:hover {
+  border-color: var(--gold);
+}
+
+.demo-lab button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.demo-scenarios button[aria-pressed="true"],
+.demo-lab .demo-primary {
+  background: var(--gold);
+  color: #12291f;
+  border-color: var(--gold);
+}
+
+
+/* =================================================================at
+   6. Workspace & Flow
+   ================================================================ */
+.demo-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+}
+
+.demo-flow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.demo-flow li {
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.demo-flow li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  left: 26px;
+  bottom: 0;
+  height: 14px;
+  width: 1px;
+  background: var(--border);
+}
+
+.demo-flow button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  min-height: 72px;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.demo-node-number {
+  font-size: 0.8rem;
+  min-width: 26px;
+  color: var(--muted);
+}
+
+.demo-flow strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.demo-flow small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+.demo-node-state {
+  margin-left: auto;
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+.demo-flow .is-current button {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.demo-flow .is-current .demo-node-number {
+  color: var(--gold);
+}
+
+.demo-flow .is-done button {
+  border-color: var(--accent);
+}
+
+
+/* =================================================================at
+   7. Inspector Panel
+   ================================================================ */
+.demo-inspector {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  align-self: start;
+  position: sticky;
+  top: 100px;
+}
+
+.demo-inspector h3 {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+.demo-inspector h4 {
+  font-size: 0.8rem;
+  margin: 24px 0 8px;
+}
+
+.demo-inspector pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.demo-inspector blockquote {
+  margin: 16px 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.demo-inspector .demo-finish {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  color: var(--text);
+}
+
+
+/* =================================================================at
+   8. Media Queries & Motion Preferences
+   ================================================================ */
+@media (max-width: 800px) {
+  .demo-lab {
+    padding: 20px;
+  }
+  
+  .demo-lab-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .demo-workspace,
+  .demo-context {
+    grid-template-columns: 1fr;
+  }
+  
+  .demo-inspector {
+    position: static;
+  }
+  
+  .demo-controls > span {
+    width: 100%;
+    margin: 4px 0;
+  }
+  
+  .demo-flow button {
+    min-height: 62px;
+  }
+  
+  .demo-context {
+    gap: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-flow button {
+    transition: none;
+  }
+}
