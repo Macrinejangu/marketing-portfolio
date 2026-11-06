@@ -50,7 +50,55 @@ export default function AutomationDemo() {
       <div className="demo-workspace"><ol className="demo-flow" aria-label="Workflow steps">{steps.map((s,i) => <li key={s.name} className={i === step ? 'is-current' : i < step ? 'is-done' : ''}><button aria-current={i === step ? 'step' : undefined} onClick={() => { setPlaying(false); setStep(i); }}><span className="demo-node-number">{i < step ? '✓' : String(i+1).padStart(2,'0')}</span><span><strong>{s.name}</strong><small>{s.tool}</small></span><span className="demo-node-state">{i === step ? 'Viewing' : i < step ? 'Done' : ''}</span></button></li>)}</ol>
       <div className="demo-inspector" aria-live="polite" aria-atomic="true">{current ? <><span className="demo-eyebrow">STEP {step+1} / {current.tool}</span><h3>{current.name}</h3><p>{current.detail}</p><h4>Why this matters</h4><p>{current.value}</p><h4>Sample output</h4><pre>{JSON.stringify(current.output,null,2)}</pre>{complete && <p className="demo-finish">{scenarios[scenario].test ? 'Test stopped. No CRM record changed.' : scenarios[scenario].category === 'Interested' ? 'Reply captured. CRM context recorded. Sales notification simulated.' : 'Reply captured and logged. Sales notification skipped.'}</p>}</> : <><span className="demo-eyebrow">BEFORE YOU START</span><h3>From reply to follow-up.</h3><p>Select a scenario, then press Run demo or step through the workflow at your own pace. Select any node to inspect its logic.</p><h4>Example incoming reply</h4><blockquote>“{scenarios[scenario].reply}”</blockquote><p>All names, messages and CRM records here are fictional.</p></>}</div></div>
     </section>
-    <section className="demo-context"><article><span className="demo-eyebrow">PURPOSE</span><h2>Connect responses with the next action.</h2><p>The workflow is designed to move outbound reply data into Close CRM and route interested replies to sales, reducing the need for manual transfers.</p></article><article><span className="demo-eyebrow">MY TECHNICAL WORK</span><h2>Webhooks, field mapping and branching.</h2><p>The underlying workflow includes JavaScript data normalisation, CRM lookups, create-or-update branches, reply notes and conditional notifications. This is rule-based marketing automation.</p></article><article><span className="demo-eyebrow">EVIDENCE AND RESULTS</span><h2>Show the mechanism clearly.</h2><p>This simulation illustrates the exported workflow’s intended behaviour. It does not establish production reliability, time saved or revenue impact. Performance metrics are not claimed for this sample.</p></article></section>
+    <section className="demo-context">
+      <article>
+        <span className="demo-eyebrow">PURPOSE</span>
+        <h2>Give sales what they need to follow up.</h2>
+        <p>
+          A reply is only useful if someone follows up. I built this workflow
+          at Ascend Growth Partners to give sales the context and alerts
+          needed for the next step.
+        </p>
+        <p>
+          We were building a new outbound process. I wanted replies to reach
+          Close CRM without someone copying information by hand, with
+          interested-reply alerts helping sales know where to focus.
+        </p>
+      </article>
+
+      <article>
+        <span className="demo-eyebrow">MY TECHNICAL WORK</span>
+        <h2>I built the connection from reply to CRM.</h2>
+        <p>
+          I designed and built the workflow from scratch using n8n,
+          Instantly, Close CRM, JavaScript and webhooks.
+        </p>
+        <p>
+          The workflow receives reply events, standardises the data and
+          checks for an existing lead. From there, the workflow creates
+          or updates the CRM record, adds reply context and notifies
+          sales when the reply is categorised as interested. A separate
+          filter stops test events before they reach the CRM.
+        </p>
+      </article>
+
+      <article>
+        <span className="demo-eyebrow">EVIDENCE AND RESULTS</span>
+        <h2>Working with real replies. Supporting real follow-up.</h2>
+        <p>
+          I deployed the workflow for live outbound campaigns and checked
+          successful runs against the records in Close CRM.
+        </p>
+        <p>
+          Replies reached the CRM without manual copying. Sales used the
+          interested-reply alerts to follow up and confirmed the reply
+          context helped them prepare for those conversations.
+        </p>
+        <p>
+          The interactive demo above shows the process using fictional data.
+        </p>
+      </article>
+    </section>
     <div className="case-study-end"><a href="#/case-studies/marketing-operations">Read the growth operations case study ↗</a><a href="mailto:macrinejangu@gmail.com">Discuss my work ↗</a></div>
   </div></main>;
 }
